@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Active Revenue Engine Framework</title>
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true,
+                processEnvironments: true
+            },
+            options: {
+                ignoreHtmlClass: 'tex2jax_ignore',
+                processHtmlClass: 'tex2jax_process',
+                renderActions: {
+                    addMenu: [0, '', {}]
+                }
+            }
+        };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+        </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F4F7FB;
+            min-height: 100vh;
+        }
+
+        @supports (font-variation-settings: normal) {
+            body {
+                font-family: 'Inter var', sans-serif;
+            }
+        }
+
+        .chart-container {
+            position: relative;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+
+        input[type="number"],
+        select {
+            background-color: #FFFFFF;
+            color: #1F2937;
+            border: 1px solid #D1D5DB;
+            transition: border-color 0.15s, box-shadow 0.15s;
+            border-radius: 6px;
+        }
+
+        input[type="number"]:focus,
+        select:focus {
+            border-color: #06B6D4;
+            /* Cyan-500 focus */
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(6, 182, 212, 0.5);
+        }
+
+        .process-detail {
+            border-left: 4px solid;
+            padding-left: 1.5rem;
+        }
+    </style>
+</head>
+
+<body class="text-gray-900">
+
+    <!-- Header for navigation links -->
+    <!-- 
+    <header class="bg-white shadow-lg sticky top-0 z-10">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
+            <h1 class="text-2xl font-extrabold text-cyan-600 flex items-center">
+                <i class='bx bxs-component text-3xl mr-2'></i> AREP Framework
+            </h1>
+            <nav class="space-x-4 text-sm font-medium">
+                <a href="#overview" class="text-gray-600 hover:text-cyan-600 transition-colors">Overview</a>
+                <a href="#processes" class="text-gray-600 hover:text-cyan-600 transition-colors">Processes (P1-P10)</a>
+                <a href="#models" class="text-gray-600 hover:text-cyan-600 transition-colors">Simulators</a>
+            </nav>
+        </div>
+    </header>
+    -->
+
+    <!-- Main Content Area -->
+    <main class="p-8 lg:p-12 max-w-6xl mx-auto">
+
+        <!-- Section 1: Overview -->
+        <section id="overview" class="mb-16 scroll-mt-12">
+            <h2 class="text-4xl font-extrabold text-gray-900 mb-2">
+                Active Revenue Engine Framework
+            </h2>
+            <p class="text-xl text-gray-500 mb-8 max-w-4xl">Reinforced, data-driven system design for predictive and
+                viable revenue generation.</p>
+
+            <!-- Core Philosophy Card -->
+            <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-xl mb-12">
+                <h3 class="text-xl font-bold text-cyan-600 mb-3 flex items-center">
+                    <i class='bx bxs-quote-alt-left text-2xl mr-2'></i>Core Philosophy
+                </h3>
+                <p class="text-lg text-gray-700 italic pl-1 border-l-2 border-cyan-300">"We must always strive to use mathematical models to prove the viability of instinct and discover latent value points that are often obscured by noise."</p>
+                <!-- NEW AUTHOR BLOCK -->
+                <div class="mt-4 pt-4 border-t border-gray-100 flex justify-end items-center">
+                    <span class="text-sm font-semibold text-gray-600 mr-4">Author: Ayomide I. Daniels</span>
+                    <a href="https://ng.linkedin.com/in/ayomide-i-daniels-185a28177" target="_blank"
+                        class="text-cyan-600 hover:text-cyan-800 transition-colors flex items-center text-sm font-medium">
+                        <i class='bx bxl-linkedin-square text-lg mr-1'></i>
+                        LinkedIn Profile
+                    </a>
+                </div>
+                <!-- END NEW AUTHOR BLOCK -->
+            </div>
+
+            <!-- Framework Flow Diagram - Simple Row -->
+            <div class="mt-8">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6 border-b pb-2">A Triad-Based System</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+
+                    <div class="p-5 bg-white rounded-xl border-t-4 border-cyan-500 shadow-md">
+                        <span class="text-cyan-600 font-bold text-xs block mb-1">PHASE I: DEFINE</span>
+                        <h4 class="text-lg font-extrabold text-gray-900">P1-P2: Strategic Foundation</h4>
+                        <p class="text-xs text-gray-500 mt-1">Define Revenue Target ($R_T$) and set four target Success
+                            Indicators (Fully Met to Exception).</p>
+                    </div>
+
+                    <div class="p-5 bg-white rounded-xl border-t-4 border-emerald-500 shadow-md">
+                        <span class="text-emerald-600 font-bold text-xs block mb-1">PHASE II: SCRUM</span>
+                        <h4 class="text-lg font-extrabold text-gray-900">P3-P9: Validation & Logistics</h4>
+                        <p class="text-xs text-gray-500 mt-1">Define Market Entry Value Initiative, define ICP stages,
+                            run mandatory Go/No-Go Simulation, and set up comms channels.</p>
+                    </div>
+
+                    <div class="p-5 bg-white rounded-xl border-t-4 border-amber-500 shadow-md">
+                        <span class="text-amber-600 font-bold text-xs block mb-1">PHASE III: EXECUTE</span>
+                        <h4 class="text-lg font-extrabold text-gray-900">P10: Field Operations</h4>
+                        <p class="text-xs text-gray-500 mt-1">Actively engage qualified leads, feeding real-time data
+                            into the Transaction Model to dictate ABANDON/REINFORCE/ACCELERATE actions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Detailed Process Steps (P1 - P10) - SINGLE COLUMN FLOW -->
+        <section id="processes" class="mb-16 scroll-mt-12">
+            <h2 class="text-4xl font-extrabold text-gray-900 mb-8 border-b pb-2">
+                <i class='bx bxs-list-ul text-4xl mr-2 text-cyan-600'></i>Detailed Processes (P1-P10)
+            </h2>
+
+            <!-- space-y for single-column stack -->
+            <div class="space-y-6">
+
+                <h3 class="text-2xl font-extrabold text-cyan-600 pt-6 pb-2 text-center border-b border-gray-300">PHASE
+                    I: DEFINE</h3>
+
+                <!-- P1 -->
+                <div class="bg-white rounded-xl border border-gray-200 shadow-lg overflow-hidden">
+                    <details class="p-5">
+                        <summary
+                            class="text-lg font-bold text-cyan-600 cursor-pointer hover:text-cyan-500 transition-colors flex items-center">
+                            <i class='bx bxs-target-lock text-2xl mr-3 text-cyan-500'></i>
+                            <span class="font-extrabold mr-2">P1</span> Define Revenue Target
+                        </summary>
+                        <div class="mt-4 text-gray-700 process-detail border-cyan-600 pt-4 border-t border-gray-100">
+                            <p class="process-title text-base text-gray-900"><i
+                                    class='bx bxs-institution text-lg mr-2 text-sky-600'></i> Responsible: Management
+                            </p>
+                            <p class="text-sm ms-8 mt-2">Establish the specific Revenue Target ($R_T$) and the defined
+                                timeframe or duration required to meet that target.</p>
+                        </div>
+
+                    </details>
+                </div>
+
+                <!-- P2 -->
+                <div class="bg-white rounded-xl border border-gray-200 shadow-lg overflow-hidden">
+                    <details class="p-5">
+                        <summary
+                            class="text-lg font-bold text-cyan-600 cursor-pointer hover:text-cyan-500 transition-colors flex items-center">
+                            <i class='bx bxs-certification text-2xl mr-3 text-cyan-500'></i>
+                            <span class="font-extrabold mr-2">P2</span> Set Target Indicators
+                        </summary>
+                        <div class="mt-4 text-gray-700 process-detail border-cyan-600 pt-4 border-t border-gray-100">
+                            <p class="process-title text-base text-gray-900"><i
+                                    class='bx bxs-institution text-lg mr-2 text-sky-600'></i> Responsible: Management
+                            </p>
+                            <p class="text-sm mb-3 ms-8 mt-2">Define quantifiable metrics for measuring the success of
+                                the revenue target, creating a clear grading system for the engagement's outcome.
+                            <ul class="list-disc list-inside ml-4 text-sm space-y-1">
+                                <li>Fully Met: 100% of the defined revenue target achieved.</li>
+                                <li>Partially Met: X% (defined value) of the target achieved.</li>
+                                <li>Worse Case Scenario: Y% (defined value) of the target achieved.</li>
+                                <li>Exception: 0% of the target achieved (target not met at all).</li>
+                            </ul>
+                            </p>
+                        </div>
+                    </details>
+                </div>
+
+                <h3 class="text-2xl font-extrabold text-emerald-600 pt-6 pb-2 text-center border-b border-gray-300">
+                    PHASE II: SCRUM & VALIDATION</h3>
+
+                <!-- P3 -->
+                <div class="bg-white rounded-xl border border-gray-200 shadow-lg overflow-hidden">
+                    <details class="p-5">
+                        <summary
+                            class="text-lg font-bold text-emerald-600 cursor-pointer hover:text-emerald-500 transition-colors flex items-center">
+                            <i class='bx bxs-rocket text-2xl mr-3 text-emerald-500'></i>
+                            <span class="font-extrabold mr-2">P3</span> Define Market Entry Value Initiative
+                        </summary>
+                        <div class="mt-4 text-gray-700 process-detail border-emerald-600 pt-4 border-t border-gray-100">
+                            <p class="process-title text-base text-gray-900"><i
+                                    class='bx bxs-medal text-lg mr-2 text-emerald-600'></i> Responsible: Product,
+                                Marketing, BD</p>
+                            <p class="text-sm  ms-8 mt-2">Identify what to sell and craft a compelling Market Entry
+                                Value Initiative. This initiative is a Problem and Solution Statement designed to
+                                resonate with the target market. This step requires significant creativity in defining
+                                the pain point and communicating it.</p>
+                        </div>
+                    </details>
+                </div>
+
+                <!-- P4 -->
+                <div class="bg-white rounded-xl border border-gray-200 shadow-lg overflow-hidden">
+                    <details class="p-5">
+                        <summary
+                            class="text-lg font-bold text-emerald-600 cursor-pointer hover:text-emerald-500 transition-colors flex items-center">
+                            <i class='bx bxs-group text-2xl mr-3 text-emerald-500'></i>
+                            <span class="font-extrabold mr-2">P4</span> Define Ideal Customer Profile (ICP)
+                        </summary>
+                        <div class="mt-4 text-gray-700 process-detail border-emerald-600 pt-4 border-t border-gray-100">
+                            <p class="process-title text-base text-gray-900"><i
+                                    class='bx bxs-user-check text-lg mr-2 text-emerald-600'></i> Responsible: Marketing,
+                                Product, BD</p>
+                            <p class="text-sm ms-8 mt-2">Establish the detailed profile of the market audience from
+                                which the target value is expected.</p>
+                        </div>
+                    </details>
+                </div>
+
+                <!-- P5 -->
+                <div class="bg-white rounded-xl border border-gray-200 shadow-lg overflow-hidden">
+                    <details class="p-5">
+                        <summary
+                            class="text-lg font-bold text-emerald-600 cursor-pointer hover:text-emerald-500 transition-colors flex items-center">
+                            <i class='bx bxs-objects-horizontal-left text-2xl mr-3 text-emerald-500'></i>
+                            <span class="font-extrabold mr-2">P5</span> Break ICP into 3 Stages
+                        </summary>
+                        <div class="mt-4 text-gray-700 process-detail border-emerald-600 pt-4 border-t border-gray-100">
+                            <p class="process-title text-base text-gray-900"><i
+                                    class='bx bxs-layer text-lg mr-2 text-emerald-600'></i> Responsible: Marketing,
+                                Product, BD</p>
+                            <p class="text-sm mb-3 ms-8 mt-2">Categorize the Ideal Customer Profile based on purchase
+                                likelihood into three actionable engagement stages:
+                            <ul class="list-disc list-inside ml-4 text-sm space-y-1">
+                                <li>Will Definitely Buy (WDB)</li>
+                                <li>Likely to Buy (LTB)</li>
+                                <li>Least Likely to Buy (LLB)</li>
+                            </ul>
+                            </p>
+                        </div>
+                    </details>
+                </div>
+
+                <!-- P6 - Go/No-Go Gate -->
+                <div class="bg-white rounded-xl border border-gray-200 shadow-lg overflow-hidden">
+                    <details class="p-5" open>
+                        <summary
+                            class="text-lg font-bold text-emerald-600 cursor-pointer hover:text-emerald-500 transition-colors flex items-center">
+                            <i class='bx bxs-flask text-2xl mr-3 text-emerald-500'></i>
+                            <span class="font-extrabold mr-2">P6</span> Simulations and Testing (The Go/No-Go Gate)
+                        </summary>
+                        <div class="mt-4 text-gray-700 process-detail border-emerald-600 pt-4 border-t border-gray-100">
+                            <p class="process-title text-base text-gray-900"><i
+                                    class='bx bxs-flask text-lg mr-2 text-emerald-600'></i> Responsible: Product,
+                                Marketing</p>
+                            <div class=" ms-8 mt-2">
+                                <p class="text-sm font-semibold mb-2">A mandatory viability check. Requires two key
+                                    actions:</p>
+                                <ul class="list-disc list-inside ml-4 text-sm space-y-1 mb-3">
+                                    <li>Testing: Rigorous testing of the offering. Contingency: If Testing fails, the
+                                        entire engagement must be immediately cancelled.</li>
+                                    <li>Simulation (Transaction Model): Uses historical and publicly available
+                                        competitor data to predict lead qualification and sales likelihood.</li>
+                                </ul>
+
+                                <!-- P6 EQUATION -->
+                                <p class="text-sm font-semibold mt-4">P6 Defining Equation (Expected Revenue $R_E$):</p>
+                                $$\\ R_E = V \cdot \sum_{i \in \{WDB, LTB, LLB\}} (N_i \cdot CR_i) \\$$
+                                <p class="text-xs italic text-gray-500">Where $V$ is Average Deal Value, $N_i$ is Lead
+                                    Volume for Stage $i$, and $CR_i$ is Conversion Rate for Stage $i$.</p>
+                                <!-- END P6 EQUATION -->
+
+                                <p class="text-sm font-semibold mt-4">Data Fields for Transaction Model (Historical &
+                                    Real-Life):</p>
+                                <ul class="list-disc list-inside ml-6 text-xs space-y-1 bg-gray-50 p-3 rounded-md mt-3">
+                                    <li>Lead History: Past and recent purchases of similar items (competitive items).
+                                    </li>
+                                    <li>Financials: Item Cost, Amount Paid, Deal Duration (time to close).</li>
+                                    <li>Geographics: Item Origin (location) and ICP Preferences for Item Origin.</li>
+                                    <li>Qualitative: Insider information regarding pain points (need, replacement, or
+                                        lack of awareness).</li>
+                                </ul>
+                                <p class="text-xs font-bold text-red-600 mt-5">MANDATORY CONTINGENCY: If Simulation
+                                    results do not favor meeting the revenue target (P2), the engagement should be
+                                    cancelled or immediately reviewed by Management.</p>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+
+                <!-- P7 -->
+                <div class="bg-white rounded-xl border border-gray-200 shadow-lg overflow-hidden">
+                    <details class="p-5">
+                        <summary
+                            class="text-lg font-bold text-emerald-600 cursor-pointer hover:text-emerald-500 transition-colors flex items-center">
+                            <i class='bx bxs-check-shield text-2xl mr-3 text-emerald-500'></i>
+                            <span class="font-extrabold mr-2">P7</span> Add Justification Checklists
+                        </summary>
+                        <div class="mt-4 text-gray-700 process-detail border-emerald-600 pt-4 border-t border-gray-100">
+                            <p class="process-title text-base text-gray-900"><i
+                                    class='bx bxs-direction-right text-lg mr-2 text-emerald-600'></i> Responsible:
+                                Sales, BD</p>
+                            <p class="text-sm  ms-8 mt-2">For each ICP stage (P5), define the $\mathbf{J^+}$ (positive)
+                                and
+                                $\mathbf{J^-}$ (negative) justification checklist. These weighted factors explain why a
+                                deal might successfully close or why it might fail.</p>
+                        </div>
+                    </details>
+                </div>
+
+                <!-- P8 -->
+                <div class="bg-white rounded-xl border border-gray-200 shadow-lg overflow-hidden">
+                    <details class="p-5">
+                        <summary
+                            class="text-lg font-bold text-emerald-600 cursor-pointer hover:text-emerald-500 transition-colors flex items-center">
+                            <i class='bx bxs-user-plus text-2xl mr-3 text-emerald-500'></i>
+                            <span class="font-extrabold mr-2">P8</span> Leads Generation & Categorization
+                        </summary>
+                        <div class="mt-4 text-gray-700 process-detail border-emerald-600 pt-4 border-t border-gray-100">
+                            <p class="process-title text-base text-gray-900"><i
+                                    class='bx bxs-user-plus text-lg mr-2 text-emerald-600'></i> Responsible: Marketing,
+                                Sales</p>
+                            <p class="text-sm  ms-8 mt-2">Active generation of new leads and their subsequent
+                                categorization into
+                                the three defined ICP stages based on criteria established in P5 and P6.</p>
+                        </div>
+                    </details>
+                </div>
+
+                <!-- P9 -->
+                <div class="bg-white rounded-xl border border-gray-200 shadow-lg overflow-hidden">
+                    <details class="p-5">
+                        <summary
+                            class="text-lg font-bold text-emerald-600 cursor-pointer hover:text-emerald-500 transition-colors flex items-center">
+                            <i class='bx bxs-folder-open text-2xl mr-3 text-emerald-500'></i>
+                            <span class="font-extrabold mr-2">P9</span> Setup Communication Chain Folder
+                        </summary>
+                        <div class="mt-4 text-gray-700 process-detail border-emerald-600 pt-4 border-t border-gray-100">
+                            <p class="process-title text-base text-gray-900"><i
+                                    class='bx bxs-folder-open text-lg mr-2 text-emerald-600'></i> Responsible: Product,
+                                Branding</p>
+                            <div class=" ms-8 mt-2">
+                                <p class="text-sm font-semibold mb-2">Establish and organize all necessary communication
+                                    and
+                                    tracking channels for this specific revenue period to ensure consistent data flow.
+                                </p>
+                                <p class="text-sm">This includes setting up dedicated channels across: CRM, Demo
+                                    Planning,
+                                    Message Logging, Feedback Tracking and Analytics, and Papers/Documentation.</p>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+
+                <h3 class="text-2xl font-extrabold text-amber-600 pt-6 pb-2 text-center border-b border-gray-300">PHASE
+                    III: EXECUTE & OPTIMIZE</h3>
+
+                <!-- P10 - Field Operations -->
+                <div class="bg-white rounded-xl border border-gray-200 shadow-lg overflow-hidden">
+                    <details class="p-5" open>
+                        <summary
+                            class="text-lg font-bold text-amber-600 cursor-pointer hover:text-amber-500 transition-colors flex items-center">
+                            <i class='bx bxs-radar text-2xl mr-3 text-amber-500'></i>
+                            <span class="font-extrabold mr-2">P10</span> Field Operations & Optimization
+                        </summary>
+                        <div class="mt-4 text-gray-700 process-detail border-amber-600 pt-4 border-t border-gray-100">
+                            <p class="process-title text-base text-gray-900"><i
+                                    class='bx bxs-dashboard text-lg mr-2 text-amber-600'></i> Responsible: Sales,
+                                Product</p>
+                            <div class=" ms-8 mt-2">
+                                <p class="text-sm mb-3">Active engagement with qualified leads to sell to them. All
+                                    field
+                                    operations comms, feedbacks, and interactions must flow through the channels set up
+                                    in
+                                    P9.</p>
+
+                                <p class="text-sm font-semibold">P10 Defining Equation (Live Close Probability
+                                    $P'_{close}$):</p>
+                                $$\\ P'_{close} = CR_{initial} + (\alpha \cdot H_{Deal}) \\$$
+                                <p class="text-xs italic text-gray-500">Where $CR_{initial}$ is the Conversion Rate from
+                                    P5,
+                                    $H_{Deal}$ is the accumulated Deal Health (from $J^+$ and $J^-$ events), and
+                                    $\alpha$ is
+                                    the Adaptation Factor (weighting the health score).</p>
+
+                                <p class="text-sm font-semibold mt-4">Real-Time Decision Model:</p>
+                                <p class="text-xs">Product and Business Development teams must continuously engage a
+                                    decision model that updates in real-time using field data ($\mathbf{J^+}$ and
+                                    $\mathbf{J^-}$ events from P7). This model dictates the immediate required action:
+                                </p>
+                                <ul class="list-disc list-inside ml-4 text-sm mt-2 space-y-1">
+                                    <li>ACCELERATE (high $\mathbf{P'_{close}}$)</li>
+                                    <li>REINFORCE (medium $\mathbf{P'_{close}}$)</li>
+                                    <li>ABANDON/REVIEW (low $\mathbf{P'_{close}}$)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Interactive Models (Simulators) -->
+        <section id="models" class="mb-20 scroll-mt-12">
+            <h2 class="text-4xl font-extrabold text-gray-900 mb-8 border-b pb-2 mt-16">
+                <i class='bx bxs-bar-chart-alt-2 text-4xl mr-2 text-cyan-600'></i>Interactive AREP Simulators
+            </h2>
+            <p class="text-xl text-gray-500 mb-10">Use these models to test the core mathematical decisions of the AREP
+                framework.</p>
+
+            <!-- Simulator 1: P6 - Go/No-Go Viability -->
+            <div id="p6-simulator" class="bg-white p-8 rounded-xl shadow-xl border-t-4 border-cyan-500 mb-12">
+                <h3 class="text-2xl font-bold text-cyan-600 mb-6 flex items-center border-b pb-2">
+                    <i class='bx bxs-flask text-2xl mr-3'></i>P6 Go/No-Go Viability Check
+                </h3>
+
+                <!-- flex/wrap layout for inputs and output -->
+                <div class="flex flex-col lg:flex-row gap-8">
+                    <!-- P6 Inputs (Left side) -->
+                    <div class="lg:w-1/3 space-y-4 p-5 border border-gray-200 rounded-lg bg-gray-50 flex-shrink-0">
+                        <h4 class="text-lg font-medium text-gray-800 border-b pb-2">Strategic Inputs & Lead Segmentation
+                        </h4>
+
+                        <div>
+                            <label for="p6-rt" class="block text-xs font-semibold text-gray-700">Revenue Target
+                                ($R_T$)</label>
+                            <input type="number" id="p6-rt" value="1000000" step="50000" class="mt-1 block w-full p-2">
+                        </div>
+                        <div>
+                            <label for="p6-wc" class="block text-sm font-semibold text-gray-700 flex items-center"><i
+                                    class='bx bx-alarm-off text-lg mr-1 text-red-600'></i>Worse Case Threshold ($WC$
+                                %)</label>
+                            <input type="number" id="p6-wc" value="50" min="0" max="100" step="5"
+                                class="mt-1 block w-full rounded-md p-2">
+                        </div>
+                        <div>
+                            <label for="p6-v" class="block text-xs font-semibold text-gray-700">Avg. Deal Value
+                                ($V$)</label>
+                            <input type="number" id="p6-v" value="25000" step="1000" class="mt-1 block w-full p-2">
+                        </div>
+                        <div class="grid grid-cols-2 gap-2">
+                            <!-- WDB -->
+                            <div class="p-2 border rounded-md"><label for="p6-n-wdb"
+                                    class="block text-xs font-medium text-gray-700">$N_{WDB}$ (Vol)</label><input
+                                    type="number" id="p6-n-wdb" value="20" class="mt-1 block w-full p-1"></div>
+                            <div class="p-2 border rounded-md"><label for="p6-cr-wdb"
+                                    class="block text-xs font-medium text-gray-700">$CR_{WDB}$ (%)</label><input
+                                    type="number" id="p6-cr-wdb" value="50" class="mt-1 block w-full p-1"></div>
+                            <!-- LTB -->
+                            <div class="p-2 border rounded-md"><label for="p6-n-ltb"
+                                    class="block text-xs font-medium text-gray-700">$N_{LTB}$ (Vol)</label><input
+                                    type="number" id="p6-n-ltb" value="50" class="mt-1 block w-full p-1"></div>
+                            <div class="p-2 border rounded-md"><label for="p6-cr-ltb"
+                                    class="block text-xs font-medium text-gray-700">$CR_{LTB}$ (%)</label><input
+                                    type="number" id="p6-cr-ltb" value="20" class="mt-1 block w-full p-1"></div>
+                            <!-- LLB -->
+                            <div class="p-2 border rounded-md"><label for="p6-n-llb"
+                                    class="block text-xs font-medium text-gray-700">$N_{LLB}$ (Vol)</label><input
+                                    type="number" id="p6-n-llb" value="100" class="mt-1 block w-full p-1"></div>
+                            <div class="p-2 border rounded-md"><label for="p6-cr-llb"
+                                    class="block text-xs font-medium text-gray-700">$CR_{LLB}$ (%)</label><input
+                                    type="number" id="p6-cr-llb" value="5" class="mt-1 block w-full p-1"></div>
+                        </div>
+                    </div>
+
+                    <!-- P6 Outputs and Chart  -->
+                    <div class="lg:flex-1 flex flex-col items-center">
+                        <!-- Decision Box -->
+                        <div id="p6-decision-box"
+                            class="w-full p-6 rounded-xl text-center transition-all border-4 shadow-xl">
+                            <span class="text-sm font-bold uppercase tracking-widest" id="p6-decision-label">Calculated
+                                Decision</span>
+                            <h3 class="text-5xl font-extrabold mt-1" id="p6-decision-text">PROCEED</h3>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-4 mt-6 w-full max-w-lg">
+                            <div class="p-4 bg-gray-100 border-l-4 border-cyan-500 rounded-md text-center shadow-md">
+                                <p class="text-sm text-gray-600">Expected Revenue ($\mathbf{R_E}$)</p>
+                                <strong class="text-3xl text-cyan-600" id="p6-re-output">$0</strong>
+                            </div>
+                            <div class="p-4 bg-gray-100 border-l-4 border-emerald-500 rounded-md text-center shadow-md">
+                                <p class="text-sm text-gray-600">Success Ratio ($\mathbf{S_R / R_T}$)</p>
+                                <strong class="text-3xl text-emerald-600" id="p6-sr-output">0%</strong>
+                            </div>
+                        </div>
+
+                        <div class="chart-container mt-6 border border-gray-300 rounded-xl p-2 bg-white shadow-inner">
+                            <canvas id="p6Chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Simulator 2: P10 - Real-Time Deal Health (Transaction Model) -->
+            <div id="p10-simulator" class="bg-white p-8 rounded-xl shadow-xl border-t-4 border-amber-500">
+                <h3 class="text-2xl font-bold text-amber-600 mb-6 flex items-center border-b pb-2">
+                    <i class='bx bxs-radar text-2xl mr-3'></i>P10 Real-Time Transaction Model
+                </h3>
+
+                <div class="flex flex-col lg:flex-row gap-8">
+
+                    <!-- P10 Outputs and Chart  -->
+                    <div
+                        class="lg:w-1/3 flex flex-col items-center p-5 border border-gray-200 rounded-lg bg-gray-50 flex-shrink-0">
+                        <!-- Decision Box -->
+                        <div id="p10-decision-box"
+                            class="w-full p-4 rounded-xl text-center transition-all border-4 shadow-md mt-6">
+                            <span class="text-sm font-bold uppercase tracking-widest" id="p10-decision-label">Current
+                                Action</span>
+                            <h3 class="text-3xl font-extrabold mt-1" id="p10-decision-text">REINFORCE</h3>
+                        </div>
+                        <div class="mt-6 w-full text-center">
+                            <p class="text-md text-gray-600">Deal Health Score ($\mathbf{H_{Deal}}$)</p>
+                            <strong class="text-5xl text-cyan-600" id="p10-health-output">0%</strong>
+                            <p class="text-sm text-gray-500">(Initial CR: <span id="p10-initial-cr-display">0%</span>)
+                            </p>
+                        </div>
+
+                        <div class="chart-container mt-4 w-full max-w-xs">
+                            <canvas id="p10Chart"></canvas>
+                        </div>
+                        <p class="text-center text-lg text-gray-600 -mt-20">Live Close Probability
+                            ($\mathbf{P'_{close}}$)<br><strong class="text-5xl font-extrabold text-amber-600"
+                                id="p10-prob-output">0%</strong></p>
+
+
+
+                    </div>
+
+                    <!-- P10 Inputs and History  -->
+                    <div class="lg:flex-1 space-y-4">
+                        <h4 class="text-lg font-medium text-gray-800 border-b pb-2">Deal Context and Field Events
+                            ($\mathbf{J^+} / \mathbf{J^-}$)</h4>
+
+                        <div>
+                            <label for="p10-icp" class="block text-sm font-semibold text-gray-700 flex items-center"><i
+                                    class='bx bxs-user-detail text-lg mr-1 text-gray-500'></i> Base Stage Conversion
+                                Rate ($\mathbf{CR_{initial}}$)</label>
+                            <select id="p10-icp" class="mt-1 block w-full p-2">
+                                <option value="0.50" selected>WDB (Will Definitely Buy) - 50% CR</option>
+                                <option value="0.20">LTB (Likely to Buy) - 20% CR</option>
+                                <option value="0.05">LLB (Least Likely to Buy) - 5% CR</option>
+                            </select>
+                        </div>
+
+                        <h4 class="text-md font-medium text-gray-800 pt-4">Log Field Events (Click to apply weight)</h4>
+                        <div class="grid grid-cols-3 gap-3">
+                         
+                            <button
+                                class="p10-event-btn p-2 bg-emerald-500 text-white rounded-md hover:bg-emerald-600 transition-colors text-xs font-medium shadow-sm"
+                                data-weight="0.15" data-name="Budget Confirmed">
+                                $\mathbf{J^+}$ Budget (+15%)
+                            </button>
+                            <button
+                                class="p10-event-btn p-2 bg-emerald-500 text-white rounded-md hover:bg-emerald-600 transition-colors text-xs font-medium shadow-sm"
+                                data-weight="0.10" data-name="Decision Maker Added">
+                                $\mathbf{J^+}$ Decision Maker Added (+10%)
+                            </button>
+                            <button
+                                class="p10-event-btn p-2 bg-red-500 text-white rounded-md hover:bg-red-600 transition-colors text-xs font-medium shadow-sm"
+                                data-weight="-0.20" data-name="No Budget Confirmed">
+                                $\mathbf{J^-}$ No Budget (-20%)
+                            </button>
+                           
+                            <button
+                                class="p10-event-btn p-2 bg-emerald-500 text-white rounded-md hover:bg-emerald-600 transition-colors text-xs font-medium shadow-sm"
+                                data-weight="0.10" data-name="Good Demo Feedback">
+                                $\mathbf{J^+}$ Good Demo (+10%)
+                            </button>
+                            <button
+                                class="p10-event-btn p-2 bg-emerald-500 text-white rounded-md hover:bg-emerald-600 transition-colors text-xs font-medium shadow-sm"
+                                data-weight="0.20" data-name="Good PoV Feedback">
+                                $\mathbf{J^+}$ Good PoV (+20%)
+                            </button>
+                            <button
+                                class="p10-event-btn p-2 bg-red-500 text-white rounded-md hover:bg-red-600 transition-colors text-xs font-medium shadow-sm"
+                                data-weight="-0.10" data-name="Competitor Mentioned">
+                                $\mathbf{J^-}$ Competitor Mentioned (-10%)
+                            </button>
+                            <button
+                                class="p10-event-btn p-2 bg-red-500 text-white rounded-md hover:bg-red-600 transition-colors text-xs font-medium shadow-sm"
+                                data-weight="-0.10" data-name="Champion Went Silent">
+                                $\mathbf{J^-}$ Silent Champion (-10%)
+                            </button>
+                        </div>
+
+                        <button id="p10-reset"
+                            class="w-full p-2 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300 font-bold transition-colors shadow-sm mt-4 border border-gray-300 text-sm">Reset
+                            Deal Health & History</button>
+
+                        <h4 class="text-md font-medium text-gray-800 pt-4 border-t border-gray-200 flex items-center"><i
+                                class='bx bx-list-ul text-lg mr-1 text-gray-500'></i> Transaction History Log</h4>
+                        <!-- History Log -->
+                        <ul id="p10-transaction-history"
+                            class="h-40 overflow-y-auto p-3 bg-white border border-gray-300 rounded-md space-y-1 text-xs text-gray-800 shadow-inner">
+                            <li class="text-gray-500 italic">No transactions logged yet.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // --- P6 Simulator Logic ---
+            const p6Inputs = [
+                'p6-rt', 'p6-wc', 'p6-v',
+                'p6-n-wdb', 'p6-cr-wdb', 'p6-n-ltb', 'p6-cr-ltb', 'p6-n-llb', 'p6-cr-llb'
+            ];
+            const p6RT = document.getElementById('p6-rt');
+            const p6WC = document.getElementById('p6-wc');
+            const p6V = document.getElementById('p6-v');
+
+            const p6NWDB = document.getElementById('p6-n-wdb');
+            const p6CRWDB = document.getElementById('p6-cr-wdb');
+            const p6NLTB = document.getElementById('p6-n-ltb');
+            const p6CRLTB = document.getElementById('p6-cr-ltb');
+            const p6NLLB = document.getElementById('p6-n-llb');
+            const p6CRLLB = document.getElementById('p6-cr-llb');
+
+            const p6REOutput = document.getElementById('p6-re-output');
+            const p6SROutput = document.getElementById('p6-sr-output');
+            const p6DecisionBox = document.getElementById('p6-decision-box');
+            const p6DecisionLabel = document.getElementById('p6-decision-label');
+            const p6DecisionText = document.getElementById('p6-decision-text');
+
+
+            // const rtValue = parseFloat(p6RT.value) || 0;
+            //const wcValue = rtValue * (wcPercent / 100.0);
+
+            let p6Chart;
+            const p6Ctx = document.getElementById('p6Chart').getContext('2d');
+
+            function updateP6Simulator() {
+                const rt = parseFloat(p6RT.value) || 0;
+                const wcPercent = parseFloat(p6WC.value) || 0;
+                const v = parseFloat(p6V.value) || 0;
+
+                const nWDB = parseFloat(p6NWDB.value) || 0;
+                const crWDB = (parseFloat(p6CRWDB.value) || 0) / 100.0;
+                const nLTB = (parseFloat(p6NLTB.value) || 0);
+                const crLTB = (parseFloat(p6CRLTB.value) || 0) / 100.0;
+                const nLLB = (parseFloat(p6NLLB.value) || 0);
+                const crLLB = (parseFloat(p6CRLLB.value) || 0) / 100.0;
+
+                // R_E calculation
+                const re = v * (nWDB * crWDB + nLTB * crLTB + nLLB * crLLB);
+                const sr = rt > 0 ? (re / rt) : 0;
+                const wcValue = rt * (wcPercent / 100.0);
+
+                p6REOutput.textContent = `$${re.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}`;
+                p6SROutput.textContent = `${(sr * 100).toFixed(0)}%`;
+
+                // Update Decision 
+                if (sr * 100 < wcPercent) {
+                    p6DecisionBox.className = "w-full p-6 rounded-xl text-center transition-all border-4 bg-red-100 text-red-700 border-red-500 shadow-xl";
+                    p6DecisionLabel.innerHTML = `Decision ($S_R < ${wcPercent}\\%$)`;
+                    p6DecisionText.textContent = "CANCEL / REVIEW";
+                } else if (sr * 100 < 100) {
+                    p6DecisionBox.className = "w-full p-6 rounded-xl text-center transition-all border-4 bg-amber-100 text-amber-700 border-amber-500 shadow-xl";
+                    p6DecisionLabel.innerHTML = "Decision ($S_R < 100\\%$)";
+                    p6DecisionText.textContent = "PROCEED (TRIAGE)";
+                } else {
+                    p6DecisionBox.className = "w-full p-6 rounded-xl text-center transition-all border-4 bg-emerald-100 text-emerald-700 border-emerald-500 shadow-xl";
+                    p6DecisionLabel.innerHTML = "Decision ($S_R \\ge 100\\%$)";
+                    p6DecisionText.textContent = "PROCEED (GO!)";
+                }
+
+                if (window.MathJax && typeof MathJax.typesetPromise === 'function') {
+                    MathJax.typesetPromise([p6DecisionBox]).catch((err) => console.error('MathJax typesetting error:', err));
+                }
+
+                // Update Chart
+                const chartData = {
+                    labels: [
+                        `WC (${wcPercent}%)`,
+                        'Expected Revenue ($R_E$)',
+                        'Revenue Target ($R_T$)'
+                    ],
+                    datasets: [{
+                        label: 'Value',
+                        data: [wcValue, re, rt],
+                        backgroundColor: [
+                            'rgba(239, 68, 68, 1)',
+                            'rgba(6, 182, 212, 1)', // Cyan-500
+                            'rgba(16, 185, 129, 1)'
+                        ],
+                        borderColor: [
+                            'rgba(239, 68, 68, 1)',
+                            'rgba(6, 182, 212, 1)',
+                            'rgba(16, 185, 129, 1)'
+                        ],
+                        borderWidth: 1,
+                        borderRadius: 4
+                    }]
+                };
+
+                if (p6Chart) {
+                    p6Chart.data = chartData;
+                    p6Chart.update();
+                } else {
+                    p6Chart = new Chart(p6Ctx, {
+                        type: 'bar',
+                        data: chartData,
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: {
+                                legend: { display: false },
+                                tooltip: {
+                                    callbacks: {
+                                        label: function (context) {
+                                            let label = context.dataset.label || '';
+                                            if (context.parsed.y !== null) {
+                                                label += new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(context.parsed.y);
+                                            }
+                                            return label;
+                                        }
+                                    }
+                                }
+                            },
+                            scales: {
+                                y: {
+                                    beginAtZero: true,
+                                    ticks: {
+                                        color: '#374151',
+                                        callback: function (value, index, ticks) {
+                                            if (value >= 1000000) return '$' + (value / 1000000) + 'M';
+                                            if (value >= 1000) return '$' + (value / 1000) + 'k';
+                                            return '$' + value;
+                                        }
+                                    },
+                                    grid: { color: 'rgba(209, 213, 219, 0.5)' }
+                                },
+                                x: {
+                                    ticks: { color: '#374151' },
+                                    grid: { color: 'rgba(209, 213, 219, 0.5)' }
+                                }
+                            }
+                        }
+                    });
+                }
+            }
+
+            p6Inputs.forEach(id => {
+                const element = document.getElementById(id);
+                if (element) {
+                    element.addEventListener('input', updateP6Simulator);
+                }
+            });
+            updateP6Simulator();
+
+
+            // --- P10 Simulator Logic ---
+            const p10ICP = document.getElementById('p10-icp');
+            const p10EventBtns = document.querySelectorAll('.p10-event-btn');
+            const p10ResetBtn = document.getElementById('p10-reset');
+
+            const p10HealthOutput = document.getElementById('p10-health-output');
+            const p10ProbOutput = document.getElementById('p10-prob-output');
+            const p10InitialCRDisplay = document.getElementById('p10-initial-cr-display');
+            const p10DecisionBox = document.getElementById('p10-decision-box');
+            const p10DecisionLabel = document.getElementById('p10-decision-label');
+            const p10DecisionText = document.getElementById('p10-decision-text');
+            const p10History = document.getElementById('p10-transaction-history');
+
+            let p10Chart;
+            const p10Ctx = document.getElementById('p10Chart').getContext('2d');
+
+            let dealHealth = 0.0;
+            const adaptationFactor = 0.5; // Alpha from formula
+
+            function logTransaction(type, name, weight) {
+                const li = document.createElement('li');
+                const sign = weight > 0 ? '+' : '';
+                const colorClass = weight > 0 ? 'text-emerald-700' : 'text-red-700';
+
+                li.className = `flex justify-between ${colorClass}`;
+                li.innerHTML = `
+                    <span class="flex items-center"><i class='bx ${weight > 0 ? 'bxs-badge-check' : 'bxs-x-circle'} text-md mr-1'></i> ${type} ${name}</span>
+                    <span class="font-mono">${sign}${Math.abs(weight * 100).toFixed(0)}%</span>
+                `;
+
+                const firstChildElement = p10History.firstElementChild;
+                if (firstChildElement && firstChildElement.classList.contains('italic')) {
+                    p10History.innerHTML = '';
+                }
+
+                p10History.appendChild(li);
+                p10History.scrollTop = p10History.scrollHeight; // Scroll to bottom
+            }
+
+            function updateP10Simulator() {
+                const initialCR = parseFloat(p10ICP.value) || 0;
+
+                // P'_close = CR_icp + (H_deal * alpha)
+                let pClose = initialCR + (dealHealth * adaptationFactor);
+                // Clamp probability between 0% and 100%
+                pClose = Math.max(0, Math.min(1, pClose));
+
+                p10HealthOutput.textContent = `${(dealHealth * 100).toFixed(0)}%`;
+                p10ProbOutput.textContent = `${(pClose * 100).toFixed(0)}%`;
+                p10InitialCRDisplay.textContent = `${(initialCR * 100).toFixed(0)}%`;
+
+                // Update Decision 
+                if (pClose < 0.30) {
+                    p10DecisionBox.className = "w-full p-4 rounded-xl text-center transition-all border-4 bg-red-100 text-red-700 border-red-500 shadow-md mt-6";
+                    p10DecisionLabel.innerHTML = "Action ($P' < 30\\%$)";
+                    p10DecisionText.textContent = "ABANDON";
+                } else if (pClose < 0.75) {
+                    p10DecisionBox.className = "w-full p-4 rounded-xl text-center transition-all border-4 bg-amber-100 text-amber-700 border-amber-500 shadow-md mt-6";
+                    p10DecisionLabel.innerHTML = "Action ($30\\% \\le P' < 75\\%$)";
+                    p10DecisionText.textContent = "REINFORCE";
+                } else {
+                    p10DecisionBox.className = "w-full p-4 rounded-xl text-center transition-all border-4 bg-emerald-100 text-emerald-700 border-emerald-500 shadow-md mt-6";
+                    p10DecisionLabel.innerHTML = "Action ($P' \\ge 75\\%$)";
+                    p10DecisionText.textContent = "ACCELERATE";
+                }
+
+                if (window.MathJax && typeof MathJax.typesetPromise === 'function') {
+                    MathJax.typesetPromise([p10DecisionBox]).catch((err) => console.error('MathJax typesetting error:', err));
+                }
+
+                // Update Chart
+                const chartData = {
+                    labels: ['Close Probability', 'Remaining'],
+                    datasets: [{
+                        data: [pClose, 1 - pClose],
+                        backgroundColor: [
+                            '#F59E0B',
+                            '#E5E7EB'
+                        ],
+                        borderColor: '#F9FAFB',
+                        borderWidth: 4,
+                        circumference: 180,
+                        rotation: 270,
+                    }]
+                };
+
+                if (p10Chart) {
+                    p10Chart.data = chartData;
+                    p10Chart.update();
+                } else {
+                    p10Chart = new Chart(p10Ctx, {
+                        type: 'doughnut',
+                        data: chartData,
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            cutout: '70%',
+                            plugins: {
+                                legend: { display: false },
+                                tooltip: { enabled: false }
+                            }
+                        }
+                    });
+                }
+            }
+
+            p10ICP.addEventListener('change', updateP10Simulator);
+
+            p10EventBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const weight = parseFloat(btn.dataset.weight);
+                    const name = btn.dataset.name;
+                    const type = weight > 0 ? 'J+' : 'J-';
+
+                    dealHealth += weight;
+                    // Clamp health between -1 (worst) and 1 (best)
+                    dealHealth = Math.max(-1, Math.min(1, dealHealth));
+
+                    logTransaction(type, name, weight);
+                    updateP10Simulator();
+                });
+            });
+
+            p10ResetBtn.addEventListener('click', () => {
+                dealHealth = 0.0;
+                p10History.innerHTML = '<li class="text-gray-500 italic">No transactions logged yet.</li>';
+                updateP10Simulator();
+            });
+
+            updateP10Simulator();
+        });
+    </script>
+
+</body>
+
+</html>
