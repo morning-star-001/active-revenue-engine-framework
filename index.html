@@ -6,6 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Active Revenue Engine Framework</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Stack+Sans+Headline:wght@200..700&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+        rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
     <script>
@@ -33,15 +40,25 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: "DM Sans", sans-serif !;
             background-color: #F4F7FB;
             min-height: 100vh;
         }
 
+        h1, h2, h3 {
+            font-family: "Stack Sans Headline", sans-serif;
+        }
+
+        /*
         @supports (font-variation-settings: normal) {
             body {
-                font-family: 'Inter var', sans-serif;
+                font-family: 'DM Sans', sans-serif;
             }
+        }
+        */
+
+        .text-violet-600 {
+            color: blueviolet !important;
         }
 
         .chart-container {
@@ -74,29 +91,44 @@
             border-left: 4px solid;
             padding-left: 1.5rem;
         }
+
+        .ms-primary-btn {
+            background-color: blueviolet;
+            color: #FFFFFF;
+            font-weight: 600;
+            padding: 0.75rem 1.5rem;
+            border-radius: 24px;
+            transition: background-color 0.15s, transform 0.1s;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
     </style>
 </head>
 
 <body class="text-gray-900">
 
     <!-- Header for navigation links -->
-    <!-- 
-    <header class="bg-white shadow-lg sticky top-0 z-10">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
-            <h1 class="text-2xl font-extrabold text-cyan-600 flex items-center">
-                <i class='bx bxs-component text-3xl mr-2'></i> ARE Framework
-            </h1>
-            <nav class="space-x-4 text-sm font-medium">
-                <a href="#overview" class="text-gray-600 hover:text-cyan-600 transition-colors">Overview</a>
-                <a href="#processes" class="text-gray-600 hover:text-cyan-600 transition-colors">Processes (P1-P10)</a>
-                <a href="#models" class="text-gray-600 hover:text-cyan-600 transition-colors">Simulators</a>
-            </nav>
-        </div>
+    <header class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between md:items-center py-5">
+                <!-- Logo/Title -->
+                <h1
+                    class="text-xl md:text-2xl font-extrabold text-violet-600 text-center flex items-center justify-center md:justify-start">
+                    <i class="bx bxs-component text-3xl mr-2"></i>
+                    "ARE"
+                </h1>
+                <!-- Navigation Links -->
+                <div id="nav-menu" class="flex flex-wrap justify-center gap-4 mt-4 md:mt-0">
+
+                    <a href="#models" class="ms-primary-btn text-sm">
+                        Interactive Simulators
+                    </a>
+                </div>
+            </div>
+        </nav>
     </header>
-    -->
 
     <!-- Main Content Area -->
-    <main class="p-8 lg:p-12 max-w-6xl mx-auto">
+    <main class="p-8 lg:p-8x max-w-7xl mx-auto">
 
         <!-- Section 1: Overview -->
         <section id="overview" class="mb-16 scroll-mt-12">
@@ -108,17 +140,19 @@
 
             <!-- Core Philosophy Card -->
             <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-xl mb-12">
-                <h3 class="text-xl font-bold text-cyan-600 mb-3 flex items-center">
+                <h3 class="text-xl font-bold text-violet-600 mb-3 flex items-center">
                     <i class='bx bxs-quote-alt-left text-2xl mr-2'></i>Core Philosophy
                 </h3>
-                <p class="text-lg text-gray-700 italic pl-1 border-l-2 border-cyan-300">"We must always strive to use mathematical models to prove the viability of instinct and discover latent value points that are often obscured by noise."</p>
+                <p class="text-lg text-gray-700 italic pl-1 ">"We must always strive to use
+                    mathematical models to prove the viability of instinct and discover latent value points that are
+                    often obscured by noise."</p>
                 <!-- NEW AUTHOR BLOCK -->
                 <div class="mt-4 pt-4 border-t border-gray-100 flex justify-end items-center">
                     <span class="text-sm font-semibold text-gray-600 mr-4">Author: Ayomide I. Daniels</span>
                     <a href="https://ng.linkedin.com/in/ayomide-i-daniels-185a28177" target="_blank"
-                        class="text-cyan-600 hover:text-cyan-800 transition-colors flex items-center text-sm font-medium">
+                        class="text-violet-600 hover:text-cyan-800 transition-colors flex items-center text-sm font-medium">
                         <i class='bx bxl-linkedin-square text-lg mr-1'></i>
-                        LinkedIn Profile
+                        LinkedIn
                     </a>
                 </div>
                 <!-- END NEW AUTHOR BLOCK -->
@@ -130,7 +164,7 @@
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
 
                     <div class="p-5 bg-white rounded-xl border-t-4 border-cyan-500 shadow-md">
-                        <span class="text-cyan-600 font-bold text-xs block mb-1">PHASE I: DEFINE</span>
+                        <span class="text-violet-600 font-bold text-xs block mb-1">PHASE I: DEFINE</span>
                         <h4 class="text-lg font-extrabold text-gray-900">P1-P2: Strategic Foundation</h4>
                         <p class="text-xs text-gray-500 mt-1">Define Revenue Target ($R_T$) and set four target Success
                             Indicators (Fully Met to Exception).</p>
@@ -156,20 +190,20 @@
         <!-- Section 2: Detailed Process Steps (P1 - P10) - SINGLE COLUMN FLOW -->
         <section id="processes" class="mb-16 scroll-mt-12">
             <h2 class="text-4xl font-extrabold text-gray-900 mb-8 border-b pb-2">
-                <i class='bx bxs-list-ul text-4xl mr-2 text-cyan-600'></i>Detailed Processes (P1-P10)
+                <i class='bx bxs-list-ul text-4xl mr-2 text-violet-600'></i>Detailed Processes (P1-P10)
             </h2>
 
             <!-- space-y for single-column stack -->
             <div class="space-y-6">
 
-                <h3 class="text-2xl font-extrabold text-cyan-600 pt-6 pb-2 text-center border-b border-gray-300">PHASE
+                <h3 class="text-2xl font-extrabold text-violet-600 pt-6 pb-2 text-center border-b border-gray-300">PHASE
                     I: DEFINE</h3>
 
                 <!-- P1 -->
                 <div class="bg-white rounded-xl border border-gray-200 shadow-lg overflow-hidden">
                     <details class="p-5">
                         <summary
-                            class="text-lg font-bold text-cyan-600 cursor-pointer hover:text-cyan-500 transition-colors flex items-center">
+                            class="text-lg font-bold text-violet-600 cursor-pointer hover:text-cyan-500 transition-colors flex items-center">
                             <i class='bx bxs-target-lock text-2xl mr-3 text-cyan-500'></i>
                             <span class="font-extrabold mr-2">P1</span> Define Revenue Target
                         </summary>
@@ -188,7 +222,7 @@
                 <div class="bg-white rounded-xl border border-gray-200 shadow-lg overflow-hidden">
                     <details class="p-5">
                         <summary
-                            class="text-lg font-bold text-cyan-600 cursor-pointer hover:text-cyan-500 transition-colors flex items-center">
+                            class="text-lg font-bold text-violet-600 cursor-pointer hover:text-cyan-500 transition-colors flex items-center">
                             <i class='bx bxs-certification text-2xl mr-3 text-cyan-500'></i>
                             <span class="font-extrabold mr-2">P2</span> Set Target Indicators
                         </summary>
@@ -436,14 +470,14 @@
         <!-- Section 3: Interactive Models (Simulators) -->
         <section id="models" class="mb-20 scroll-mt-12">
             <h2 class="text-4xl font-extrabold text-gray-900 mb-8 border-b pb-2 mt-16">
-                <i class='bx bxs-bar-chart-alt-2 text-4xl mr-2 text-cyan-600'></i>Interactive "ARE" Simulators
+                <i class='bx bxs-bar-chart-alt-2 text-4xl mr-2 text-violet-600'></i>Interactive "ARE" Simulators
             </h2>
             <p class="text-xl text-gray-500 mb-10">Use these models to test the core mathematical decisions of the "ARE"
                 framework.</p>
 
             <!-- Simulator 1: P6 - Go/No-Go Viability -->
             <div id="p6-simulator" class="bg-white p-8 rounded-xl shadow-xl border-t-4 border-cyan-500 mb-12">
-                <h3 class="text-2xl font-bold text-cyan-600 mb-6 flex items-center border-b pb-2">
+                <h3 class="text-2xl font-bold text-violet-600 mb-6 flex items-center border-b pb-2">
                     <i class='bx bxs-flask text-2xl mr-3'></i>P6 Go/No-Go Viability Check
                 </h3>
 
@@ -509,7 +543,7 @@
                         <div class="grid grid-cols-2 gap-4 mt-6 w-full max-w-lg">
                             <div class="p-4 bg-gray-100 border-l-4 border-cyan-500 rounded-md text-center shadow-md">
                                 <p class="text-sm text-gray-600">Expected Revenue ($\mathbf{R_E}$)</p>
-                                <strong class="text-3xl text-cyan-600" id="p6-re-output">$0</strong>
+                                <strong class="text-3xl text-violet-600" id="p6-re-output">$0</strong>
                             </div>
                             <div class="p-4 bg-gray-100 border-l-4 border-emerald-500 rounded-md text-center shadow-md">
                                 <p class="text-sm text-gray-600">Success Ratio ($\mathbf{S_R / R_T}$)</p>
@@ -544,7 +578,7 @@
                         </div>
                         <div class="mt-6 w-full text-center">
                             <p class="text-md text-gray-600">Deal Health Score ($\mathbf{H_{Deal}}$)</p>
-                            <strong class="text-5xl text-cyan-600" id="p10-health-output">0%</strong>
+                            <strong class="text-5xl text-violet-600" id="p10-health-output">0%</strong>
                             <p class="text-sm text-gray-500">(Initial CR: <span id="p10-initial-cr-display">0%</span>)
                             </p>
                         </div>
@@ -578,7 +612,7 @@
 
                         <h4 class="text-md font-medium text-gray-800 pt-4">Log Field Events (Click to apply weight)</h4>
                         <div class="grid grid-cols-3 gap-3">
-                         
+
                             <button
                                 class="p10-event-btn p-2 bg-emerald-500 text-white rounded-md hover:bg-emerald-600 transition-colors text-xs font-medium shadow-sm"
                                 data-weight="0.15" data-name="Budget Confirmed">
@@ -594,7 +628,7 @@
                                 data-weight="-0.20" data-name="No Budget Confirmed">
                                 $\mathbf{J^-}$ No Budget (-20%)
                             </button>
-                           
+
                             <button
                                 class="p10-event-btn p-2 bg-emerald-500 text-white rounded-md hover:bg-emerald-600 transition-colors text-xs font-medium shadow-sm"
                                 data-weight="0.10" data-name="Good Demo Feedback">
